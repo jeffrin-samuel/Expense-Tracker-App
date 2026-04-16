@@ -14,14 +14,13 @@ connectDB();
 // ─── Middleware ───────────────────────────────────────────────────────────────
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",                              // local dev
-      "https://jeffrin-samuel.github.io",                  // GitHub Pages
-    ],
+    origin: "https://expense-tracker-app-frontend-ftg4.onrender.com",
+    credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type"],
   })
 );
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
